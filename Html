@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Suit Reminder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Health Suit Reminder</h1>
+        <div class="reminder-section">
+            <h2>Select Reminder Type</h2>
+            <div class="reminder-options">
+                <button onclick="setReminder('exercise')">Exercise</button>
+                <button onclick="setReminder('hydration')">Hydration</button>
+                <button onclick="setReminder('medication')">Medication</button>
+            </div>
+        </div>
+        <div id="reminder-setup" class="hidden">
+            <h2>Set Up Reminder</h2>
+            <label for="time">Reminder Time:</label>
+            <input type="time" id="time">
+            <button onclick="saveReminder()">Set Reminder</button>
+        </div>
+        <div id="confirmation" class="hidden">
+            <p>Reminder set successfully!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
