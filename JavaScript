@@ -1,0 +1,25 @@
+function saveReminder() {
+    const time = document.getElementById('time').value;
+    if (time) {
+        // Save the reminder logic here (for now, just confirm the reminder)
+        document.getElementById('reminder-setup').classList.add('hidden');
+        document.getElementById('confirmation').classList.remove('hidden');
+
+        // Optional: Set a real-time reminder (basic implementation)
+        const [hour, minute] = time.split(':');
+        const now = new Date();
+        const reminderTime = new Date();
+        reminderTime.setHours(hour, minute, 0, 0);
+
+        const delay = reminderTime.getTime() - now.getTime();
+        if (delay > 0) {
+            setTimeout(() => {
+                alert(`Time to ${reminderType}!`);
+            }, delay);
+        } else {
+            alert('Please set a future time for the reminder.');
+        }
+    } else {
+        alert('Please set a reminder time.');
+    }
+}
